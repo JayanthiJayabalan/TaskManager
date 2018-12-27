@@ -35,7 +35,7 @@ public class TaskService {
 		 jdbcTemplate.update(updateTaskSQL,params,types);
 				 
 		 String updateParentQry = "update parent_task set parent_task =? where parent_id =? ";
-		 Object[] parentObj = {task.getParentTask(),task.getParentTaskId()};
+		 Object[] parentObj = {task.getParentTask(),task.getParentTask()};
 		 int[] parentObjType = {Types.VARCHAR,Types.INTEGER};
 		 jdbcTemplate.update(updateParentQry,parentObj,parentObjType);
 	}

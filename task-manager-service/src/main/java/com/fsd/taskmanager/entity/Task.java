@@ -24,10 +24,12 @@ public class Task {
 	Date endDate;
 	String status;
 	int parentTaskId;
+	@Column(name="parent_task")
+	String parentTask;
 	 
 	 
 	public Task(int taskId,  String task, int priority, Date startDate, Date endDate,
-			int parentTaskId,String status) {
+			int parentTaskId,String status,String parentTask) {
 		super();
 		this.taskId = taskId;
 		this.task = task;
@@ -36,6 +38,7 @@ public class Task {
 		this.endDate = endDate;
 		this.parentTaskId = parentTaskId;
 		this.status=status;
+		this.parentTask = parentTask;	
 	}
 	@Column(name="parent_id")
 	public int getParentTaskId() {
@@ -87,6 +90,12 @@ public class Task {
 	}
 	public void setStatus(String status) {
 		this.status = status;
+	}
+	public String getParentTask() {
+		return parentTask;
+	}
+	public void setParentTask(String parentTask) {
+		this.parentTask = parentTask;
 	}
 	 
 	 
