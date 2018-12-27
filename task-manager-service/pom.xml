@@ -17,7 +17,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
-		<docker.image.prefix>Jayanthi-TaskManager</docker.image.prefix>
+		<docker.image.prefix>jayanthi-taskmanager</docker.image.prefix>
 	</properties>
 
 	<dependencies>
@@ -82,7 +82,7 @@
 					</execution>
 				</executions>
 				<configuration>
-					<imageName>Jayanthi-task-manager</imageName>
+					<imageName>jayanthi-task-manager</imageName>
 					<dockerHost>http://172.18.2.50:2375</dockerHost>
 					<dockerDirectory>docker</dockerDirectory>
 					<resources>
@@ -93,6 +93,10 @@
 						</resource>
 					</resources>
 				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
 			</plugin>
 		</plugins>
 	</build>
