@@ -41,8 +41,8 @@ public class TaskService {
 	}
 
 	public List<Task> getAllTasks() {
-		//String sql = "select t.task_id,t.task,t.priority,t.start_date,t.end_date, t.status,pt.parent_task,pt.parent_id as parentTaskId from task t left join parent_task pt on t.parent_id=pt.parent_id";
-		String sql = "select t.task_id,pt.parent_task,pt.parent_id as parentTaskId from task t left join parent_task pt on t.parent_id=pt.parent_id";
+		String sql = "select t.task_id,t.task,t.priority,t.start_date,t.end_date, t.status,pt.parent_task,pt.parent_id as parentTaskId from task t left join parent_task pt on t.parent_id=pt.parent_id";
+		//String sql = "select t.task_id,pt.parent_task,pt.parent_id as parentTaskId from task t left join parent_task pt on t.parent_id=pt.parent_id";
 		List<Task> taskList = jdbcTemplate.query(sql, new BeanPropertyRowMapper(Task.class));
 		return taskList;
 	}
